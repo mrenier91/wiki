@@ -11,8 +11,7 @@ public class mainTestWiki {
 		Administrateur u1 = new Administrateur("poeh","mdp","mickael1","renier");
 		Correcteur u2 = new Correcteur("poeh","mdp","mickael2","renier");
 		Utilisateur u3 = new Utilisateur("poeh","mdp","mickael3","renier");
-
-
+//test
 
 		Article a1 = new Article("titre", "blalvzalalbvallba");
 
