@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<entity-mappings xmlns="http://java.sun.com/xml/ns/persistence/orm"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/persistence/orm http://java.sun.com/xml/ns/persistence/orm_2_0.xsd"
+	version="2.0">
+
+	<!--Utilisateur-->
+	<named-query name="Role.getUtilisateurs">
+		<query>select u from Utilisateur u</query>
+	</named-query>
+
+	<!--Commentaire-->
+	<named-query name="Role.getCommentairesFromUtilisateurs">
+		<query>select c from Commentaire c where c.utilisateur.id= :idUser</query>
+	</named-query>
+
+	<named-query name="Role.getCommentairesFromArticle">
+		<query>select c from Commentaire c where c.article.id= :idArticle</query>
+	</named-query>
+
+	<!--Article -->
+	<named-query name="Role.getArticlesFromUtilisateurs">
+		<query>select a from Article a where a.utilisateur.id= :idUser</query>
+	</named-query>
+
+
+
+</entity-mappings>
