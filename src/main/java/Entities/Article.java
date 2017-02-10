@@ -19,6 +19,9 @@ public class Article {
 	@ManyToOne
 	private Utilisateur utilisateur;
 	
+	@ManyToOne
+	private Theme theme;
+	
 	public Article() {
 	}
 	
@@ -75,6 +78,14 @@ public class Article {
 	}
 	public void setUtilisateur(Utilisateur utilisateur) {
 		this.utilisateur = utilisateur;
+	}
+
+	public Theme getTheme() {
+		return theme;
+	}
+
+	public void setTheme(Theme theme) {
+		this.theme = theme;
 	}
 	
 	
