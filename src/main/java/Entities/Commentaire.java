@@ -12,8 +12,8 @@ public class Commentaire {
 	private int id;
 	private String text;
 	
-	@ManyToMany(cascade = CascadeType.ALL)
-	private Collection<Commentaire> commentaires;
+	@ManyToOne(cascade = CascadeType.ALL)
+	private Commentaire commentairePere;
 	
 	@ManyToOne
 	private Utilisateur utilisateur;
@@ -30,11 +30,11 @@ public class Commentaire {
 		this.text = text;
 	}
 
-	public Commentaire(int id, String text, Collection<Commentaire> commentaires, Utilisateur utilisateur) {
+	public Commentaire(int id, String text, Commentaire commentaire, Utilisateur utilisateur) {
 		super();
 		this.id = id;
 		this.text = text;
-		this.commentaires = commentaires;
+		this.commentairePere = commentaire;
 		this.utilisateur = utilisateur;
 	}
 
@@ -50,20 +50,15 @@ public class Commentaire {
 	public void setText(String text) {
 		this.text = text;
 	}
-	public Collection<Commentaire> getCommentaires() {
-		return commentaires;
+	
+	public Commentaire getCommentairePere() {
+		return commentairePere;
 	}
-	public void setCommentaires(Collection<Commentaire> commentaires) {
-		this.commentaires = commentaires;
-	}
-	public void setCommentaires(Commentaire... commentaires) {
-		if(this.commentaires==null)
-			this.commentaires= new ArrayList<Commentaire>();
 
-		for (Commentaire commentaire : commentaires) {
-			this.commentaires.add(commentaire);
-		}
+	public void setCommentairePere(Commentaire commentairePere) {
+		this.commentairePere = commentairePere;
 	}
+
 	public Utilisateur getUtilisateur() {
 		return utilisateur;
 	}
@@ -81,9 +76,11 @@ public class Commentaire {
 
 	@Override
 	public String toString() {
-		return "Commentaire [id=" + id + ", text=" + text + ", commentaires=" + commentaires + ", utilisateur="
-				+ utilisateur+"]";
+		return "Commentaire [id=" + id + ", text=" + text + ", commentairePere=" + commentairePere + ", utilisateur="
+				+ utilisateur + ", article=" + article + "]";
 	}
+
+	
 	
 	
 

@@ -14,7 +14,7 @@ public class Theme {
 	private String nom;
 	
 	@OneToMany(mappedBy = "theme",cascade = CascadeType.ALL)
-	private Collection<Article> article;
+	private Collection<Article> articles;
 
 	
 	public Theme() {
@@ -42,11 +42,21 @@ public class Theme {
 	}
 
 	public Collection<Article> getArticle() {
-		return article;
+		return articles;
 	}
 
-	public void setArticle(Collection<Article> article) {
-		this.article = article;
+	public void setArticle(Collection<Article> articles) {
+		this.articles = articles;
+	}
+	
+	public void setArticle(Article... articles) {
+		if(this.articles==null)
+			this.articles= new ArrayList<Article>();
+		
+		for (Article article : articles) {
+			this.articles.add(article);
+		}
+		
 	}
 	
 	

@@ -12,25 +12,25 @@ public class Article {
 	private int id;
 	private String titre;
 	private String text;
-	
+
 	@OneToMany(mappedBy = "article",cascade = CascadeType.ALL)
 	private Collection<Commentaire> commentaires;
-	
+
 	@ManyToOne
 	private Utilisateur utilisateur;
-	
+
 	@ManyToOne
 	private Theme theme;
-	
+
 	public Article() {
 	}
-	
+
 	public Article(String titre, String text) {
 		super();
 		this.titre = titre;
 		this.text = text;
 	}
-	
+
 	public Article(int id, String titre, String text, Collection<Commentaire> commentaires,
 			Entities.Utilisateur utilisateur) {
 		super();
@@ -67,7 +67,7 @@ public class Article {
 	public void setCommentaires(Commentaire... commentaires) {
 		if(this.commentaires==null)
 			this.commentaires= new ArrayList<Commentaire>();
-		
+
 		for (Commentaire commentaire : commentaires) {
 			this.commentaires.add(commentaire);
 			commentaire.setArticle(this);
@@ -86,7 +86,8 @@ public class Article {
 
 	public void setTheme(Theme theme) {
 		this.theme = theme;
+		theme.setArticle(this);
 	}
-	
-	
+
+
 }

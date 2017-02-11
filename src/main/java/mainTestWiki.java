@@ -14,20 +14,31 @@ public class mainTestWiki {
 
 		Article a1 = new Article("titre", "blalvzalalbvallba");
 
+		Theme t1 = new Theme("Automobile");
+
 		Commentaire c1 = new Commentaire("ceci est un commentaire");
 
 		Commentaire c2 = new Commentaire("ceci est un autre commentaire");
+
+		//ThemeDAO.createTheme(t1);
+		
+		
+		
+		a1.setTheme(t1);
 
 		u1.setArticles(a1);
 		u1.setCommentaires(c1);
 		a1.setCommentaires(c1);
 
-		c1.setCommentaires(c2);
+		c1.setCommentairePere(c2);
 
 		//Exemple de creation
-				UtilisateurDAO.createUtilisateur(u1);
-				UtilisateurDAO.createUtilisateur(u2);
-				UtilisateurDAO.createUtilisateur(u3);
+		UtilisateurDAO.createUtilisateur(u1);
+		UtilisateurDAO.createUtilisateur(u2);
+		UtilisateurDAO.createUtilisateur(u3);
+		
+		//ArticleDAO.createArticle(a1);
+			
 
 		//Exemple de modification
 		//UtilisateurDAO.updateUtilisateur(1,"login","mdp","nom","prenom");
