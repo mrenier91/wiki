@@ -24,9 +24,9 @@
 	</named-query>
 	
 	<!--Theme -->
-	<named-query name="Role.getThemes">
-		<query>select a from Theme</query>
-	</named-query>
+<!-- 	<named-query name="Role.getThemes"> -->
+<!-- 		<query>select a from Theme</query> -->
+<!-- 	</named-query> -->
 	
 
 </entity-mappings>

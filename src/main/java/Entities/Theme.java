@@ -12,10 +12,9 @@ public class Theme {
 	private int id;
 	
 	private String nom;
-	
+		
 	@OneToMany(mappedBy = "theme",cascade = CascadeType.ALL)
 	private Collection<Article> articles;
-
 	
 	public Theme() {
 	}

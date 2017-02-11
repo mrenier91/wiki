@@ -6,11 +6,12 @@ import Entities.*;
 
 public class UtilisateurDAO {
 
-	static EntityManagerFactory emf= Persistence.createEntityManagerFactory("bddHibernate");
+	public static EntityManagerFactory emf= Persistence.createEntityManagerFactory("bddHibernate");
 	
 	//Appel requete getUtilisateurs définis dans mapping.xml
 	public static ArrayList<Utilisateur> getUtilisateurs(){
 		ArrayList<Utilisateur> utilisateurs= new ArrayList<Utilisateur>();
+		
 		EntityManager em = emf.createEntityManager();
 
 		try {

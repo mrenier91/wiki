@@ -20,10 +20,7 @@ public class mainTestWiki {
 
 		Commentaire c2 = new Commentaire("ceci est un autre commentaire");
 
-		//ThemeDAO.createTheme(t1);
-		
-		
-		
+				
 		a1.setTheme(t1);
 
 		u1.setArticles(a1);
@@ -36,8 +33,9 @@ public class mainTestWiki {
 		UtilisateurDAO.createUtilisateur(u1);
 		UtilisateurDAO.createUtilisateur(u2);
 		UtilisateurDAO.createUtilisateur(u3);
-		
-		//ArticleDAO.createArticle(a1);
+//		
+		ThemeDAO.createTheme(t1);
+//		ArticleDAO.createArticle(a1);
 			
 
 		//Exemple de modification
