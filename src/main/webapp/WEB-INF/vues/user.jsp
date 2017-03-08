@@ -9,21 +9,20 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <link rel="stylesheet" href="css/style.css" type="text/css">
-<title>Insert title here</title>
+<title>Mickypédia</title>
 </head>
 <body>
-<header class="header">
-	<a class="logo"><img src="https://raw.githubusercontent.com/reactjs/redux/master/logo/logo.png"></a>
-	<nav class="menu">
-		<a href="#">Menu</a> <a href="#">Menu</a> <a href="#">Menu</a> <a
-			href="#">Menu</a>
-	</nav>
-</header>
+	<header class="header">
+		<a class="logo"><img
+			src="https://raw.githubusercontent.com/reactjs/redux/master/logo/logo.png"></a>
+		<nav class="menu">
+			<a href="/Wiki/auth.do">Acceuil</a> <a href="#">Articles</a> <a href="#">Administration</a> <a
+				href="/Wiki/logout">Deconnexion</a>
+		</nav>
+	</header>
 
 	<div>
-	<br/>
-	<br/>
-	<br/>
+		<br /> <br /> <br />
 		<h1>Bonjour ${ utilisateurConnecte.nom } ${ utilisateurConnecte.prenom }
 		</h1>
 

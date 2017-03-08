@@ -33,6 +33,13 @@ public class Authentification extends HttpServlet {
 	protected void doGet(final HttpServletRequest request, final HttpServletResponse response)
 			throws ServletException, IOException {
 
+		Utilisateur utilisateurConnecte = (Utilisateur)request.getSession().getAttribute("utilisateurConnecte");
+		if(utilisateurConnecte!=null)
+		{
+			request.setAttribute("articles", ArticleDAO.getArticlesFromUtilisateurs(utilisateurConnecte.getId()));
+			request.getRequestDispatcher("/WEB-INF/vues/user.jsp").forward(request, response);
+		}
+		
 		request.getRequestDispatcher("/WEB-INF/vues/login.jsp").forward(request, response);
 	}
 

@@ -9,6 +9,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import DAO.UtilisateurDAO;
 import Entities.Utilisateur;
 
 
@@ -42,12 +43,11 @@ public class CreerUtilisateur extends HttpServlet {
 		String prnom = request.getParameter("firstname");
 		String login = request.getParameter("login");
 		String mdp = request.getParameter("mdp");
-		String age = request.getParameter("age");
-		String profession = request.getParameter("profession");
+		
 		
 		Utilisateur usr = new Utilisateur(login, mdp, nom, prnom);
-		request.setAttribute("utilisateur",usr);
-		//DAOUtilisateur.getInstance().insert(login, usr);
+
+		UtilisateurDAO.createUtilisateur(usr);
 		
 		request.getRequestDispatcher("/WEB-INF/vues/user.jsp").forward(request, response);
 	}
