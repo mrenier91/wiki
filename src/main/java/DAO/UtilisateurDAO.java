@@ -6,45 +6,42 @@ import Entities.*;
 
 public class UtilisateurDAO {
 
-	public static EntityManagerFactory emf= Persistence.createEntityManagerFactory("bddHibernate");
-	
-	//Appel requete getUtilisateurs définis dans mapping.xml
-	public static ArrayList<Utilisateur> getUtilisateurs(){
-		ArrayList<Utilisateur> utilisateurs= new ArrayList<Utilisateur>();
-		
+	public static EntityManagerFactory emf = Persistence.createEntityManagerFactory("bddHibernate");
+
+	// Appel requete getUtilisateurs définis dans mapping.xml
+	public static ArrayList<Utilisateur> getUtilisateurs() {
+		ArrayList<Utilisateur> utilisateurs = new ArrayList<Utilisateur>();
+
 		EntityManager em = emf.createEntityManager();
 
 		try {
-			utilisateurs = (ArrayList<Utilisateur>) em.createNamedQuery("Role.getUtilisateurs")
-					.getResultList();
+			utilisateurs = (ArrayList<Utilisateur>) em.createNamedQuery("Role.getUtilisateurs").getResultList();
 		} catch (Exception e) {
 			System.out.println(e.getMessage());
-		}
-		finally {
+		} finally {
 			em.close();
 		}
 
 		return utilisateurs;
 	}
-	
-	public static Utilisateur getUtilisateur(int id){
-		
+
+	public static Utilisateur getUtilisateur(int id) {
+
 		EntityManager em = emf.createEntityManager();
 
 		try {
 			return em.find(Utilisateur.class, id);
-			
+
 		} catch (Exception e) {
 			System.out.println(e.getMessage());
-		}
-		finally {
+		} finally {
 			em.close();
 		}
 
 		return null;
 	}
 
-	public static void createUtilisateur(Utilisateur u1){
+	public static void createUtilisateur(Utilisateur u1) {
 		EntityManager em = emf.createEntityManager();
 
 		EntityTransaction tx = em.getTransaction();
@@ -56,50 +53,64 @@ public class UtilisateurDAO {
 
 		} catch (Exception e) {
 			System.out.println(e.getMessage());
-		}
-		finally {
+		} finally {
 			em.close();
 		}
 	}
-	
-	public static void updateUtilisateur(int id, String login, String mdp, String nom, String prenom){
+
+	public static void updateUtilisateur(int id, String login, String mdp, String nom, String prenom) {
 		EntityManager em = emf.createEntityManager();
 
 		EntityTransaction tx = em.getTransaction();
 
 		try {
 			tx.begin();
-			
+
 			Utilisateur uModif = em.find(Utilisateur.class, id);
 			uModif.setLogin(login);
 			uModif.setMdp(mdp);
 			uModif.setNom(nom);
 			uModif.setPrenom(prenom);
-			
+
 			em.persist(uModif);
 			tx.commit();
-			
 
 		} catch (Exception e) {
 			System.out.println(e.getMessage());
-		}
-		finally {
+		} finally {
 			em.close();
 		}
 	}
-	
-	public static void deleteUtilisateur(int id){
+
+	public static void deleteUtilisateur(int id) {
 		EntityManager em = emf.createEntityManager();
 
 		EntityTransaction tx = em.getTransaction();
 
 		try {
 			tx.begin();
-			
+
 			Utilisateur uModif = em.find(Utilisateur.class, id);
-			
+
 			em.remove(uModif);
 			tx.commit();
+
+		} catch (Exception e) {
+			System.out.println(e.getMessage());
+		} finally {
+			em.close();
+		}
+	}
+
+public static Utilisateur getUtilisateurLogin(String login, String mdp){
+		Utilisateur utilisateur = new Utilisateur();
+		
+		EntityManager em = emf.createEntityManager();
+
+		try {
+			utilisateur = (Utilisateur) em.createNamedQuery("Role.loginUtilisateur")
+					.setParameter("login",login)
+					.getSingleResult();
 			
 		} catch (Exception e) {
 			System.out.println(e.getMessage());
@@ -107,5 +118,8 @@ public class UtilisateurDAO {
 		finally {
 			em.close();
 		}
+
+		return utilisateur;
 	}
+
 }

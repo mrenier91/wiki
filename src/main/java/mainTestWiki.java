@@ -34,7 +34,7 @@ public class mainTestWiki {
 		UtilisateurDAO.createUtilisateur(u2);
 		UtilisateurDAO.createUtilisateur(u3);
 //		
-		ThemeDAO.createTheme(t1);
+//		ThemeDAO.createTheme(t1);
 //		ArticleDAO.createArticle(a1);
 			
 

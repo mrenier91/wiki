@@ -1,0 +1,141 @@
+/* body { */
+/* 	margin: 0em; */
+/* 	border: 0em; */
+/* 	padding: 0em; */
+/* } */
+
+html, body{
+    background-color: #F6F6F6;
+    font-family: Verdana, sans-serif;
+    font-size: 16px;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    border: 0;
+}
+/* HEADER */
+.header{
+    position: fixed;
+    left: 0;
+    right: 0;
+    height: 80px;
+    line-height: 80px;
+    background-color: #222222;
+    margin-top: 0em;
+}
+img{
+    float: left;
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    width: 30px;
+    height: 30px;
+}
+.menu{
+    padding: 0 10px;
+    padding-left: 600px;
+    margin-top: 0em;
+}
+.menu a{
+    font-weight: bold;
+    text-decoration: ;
+    text-transform: uppercase;
+    text-decoration: none;
+    padding: 0 10px;
+    color: #FFF;
+    transition: all 0.1s ease 0.2s;
+}
+.menu a:hover{
+    color: #62bcda;
+    transition: all 0.3s ease 0.2s;
+}
+.separator{
+    margin-top: 80px;
+    height: 10px;
+    background-color: red;
+}
+.flat{
+    height: 400px;
+    background-color: #62bcda;
+}
+/* CONTAINER */
+.container{
+    margin: 50px;
+    height: 950px;
+    clear: both;
+}
+/* FOOTER */
+.footer{
+    float: left;
+    width: 100%;
+    line-height: 60px;
+    bottom: 0;
+    color: #FFF;
+    height: 120px;
+    text-align: center;
+    background-color: #222222;
+}
+
+
+
+div {
+	background-color: #00ADD0;
+	text-align: center;
+	display: center;
+	font-family: arial;
+/*  	margin-top: 5em; */
+}
+
+h1 {
+	color: white;
+	font-size: 5em;
+}
+
+p {
+	color: white;
+	display: inline;
+	font-weight: bold;
+}
+
+input {
+	font-weight: bold;
+	border-style: solid;
+	border-width: 2px;
+	border-color: lightblue;
+}
+
+button {
+	width: 6em;
+	height: 2em;
+	background-color: #00ADD0;
+	color: white;
+	font-weight: bold;
+	margin-bottom: 1em;
+	border-style: solid;
+	border-width: 2px;
+	border-color: white;
+}
+
+button:hover {
+	color: #00ADD0;
+	border-color: #00ADD0;
+	background-color: white;
+}
+
+.button {
+	width: 6em;
+	height: 2em;
+	background-color: #00ADD0;
+	color: white;
+	font-weight: bold;
+	margin-bottom: 1em;
+	border-style: solid;
+	border-width: 2px;
+	border-color: white;
+}
+
+.button:hover {
+	color: #00ADD0;
+	border-color: #00ADD0;
+	background-color: white;
+}
