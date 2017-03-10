@@ -12,8 +12,8 @@ import Entities.Utilisateur;
 
 
 
-@WebServlet(urlPatterns = "/user")
-public class NewServlet extends HttpServlet {
+@WebServlet(urlPatterns = "/accueil")
+public class AccueilServlet extends HttpServlet {
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
@@ -28,7 +28,7 @@ public class NewServlet extends HttpServlet {
 		}
 
 		if (request.getSession(false) != null) {
-			request.getRequestDispatcher("/WEB-INF/vues/user.jsp").forward(request, response);
+			request.getRequestDispatcher("/WEB-INF/vues/accueil.jsp").forward(request, response);
 		} else {
 			request.getRequestDispatcher("/WEB-INF/vues/login.jsp").forward(request, response);
 		}

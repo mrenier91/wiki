@@ -37,7 +37,7 @@ public class Authentification extends HttpServlet {
 		if(utilisateurConnecte!=null)
 		{
 			request.setAttribute("articles", ArticleDAO.getArticlesFromUtilisateurs(utilisateurConnecte.getId()));
-			request.getRequestDispatcher("/WEB-INF/vues/user.jsp").forward(request, response);
+			request.getRequestDispatcher("/WEB-INF/vues/accueil.jsp").forward(request, response);
 		}
 		
 		request.getRequestDispatcher("/WEB-INF/vues/login.jsp").forward(request, response);
@@ -64,7 +64,7 @@ public class Authentification extends HttpServlet {
 			request.getSession().setAttribute("utilisateurConnecte", utilisateur);
 			request.setAttribute("articles", ArticleDAO.getArticlesFromUtilisateurs(utilisateur.getId()));
 			
-			request.getRequestDispatcher("/WEB-INF/vues/user.jsp").forward(request, response);
+			request.getRequestDispatcher("/WEB-INF/vues/accueil.jsp").forward(request, response);
 		} else {
 			request.setAttribute("errorMessage", "Erreur d'authentification!");
 			request.getRequestDispatcher("/WEB-INF/vues/login.jsp").forward(request, response);

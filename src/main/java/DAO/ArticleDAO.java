@@ -11,6 +11,13 @@ public class ArticleDAO {
 
 	
 	//Appel requete getUtilisateurs définis dans mapping.xml
+	public static ArrayList<Article> getArticles(){
+		EntityManager em = emf.createEntityManager();
+		return (ArrayList<Article>) em.createNamedQuery("Role.getArticles")
+				.getResultList();
+
+	}
+	
 	public static ArrayList<Article> getArticlesFromUtilisateurs(int idUsr){
 		EntityManager em = emf.createEntityManager();
 		return (ArrayList<Article>) em.createNamedQuery("Role.getArticlesFromUtilisateurs")

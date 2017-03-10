@@ -9,6 +9,8 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <link rel="stylesheet" href="css/style.css" type="text/css">
+<link href="webjars/bootstrap/3.3.6/css/bootstrap.min.css"
+	rel="stylesheet">
 <title>Mickypédia</title>
 </head>
 <body>
@@ -16,35 +18,33 @@
 		<a class="logo"><img
 			src="https://raw.githubusercontent.com/reactjs/redux/master/logo/logo.png"></a>
 		<nav class="menu">
-			<a href="/Wiki/auth.do">Acceuil</a> <a href="#">Articles</a> <a href="#">Administration</a> <a
-				href="/Wiki/logout">Deconnexion</a>
+			<a href="/Wiki/auth.do">Accueil</a> <a href="#">Articles</a> <a
+				href="#">Administration</a> <a href="/Wiki/logout">Deconnexion</a>
 		</nav>
 	</header>
 
 	<div>
-		<br /> <br /> <br />
-		<h1>Bonjour ${ utilisateurConnecte.nom } ${ utilisateurConnecte.prenom }
-		</h1>
+		<br /> <br /> <br /> <br /> <br /> Articles : <br /> <br />
 
-		<br /> <br /> articles : <br /> <br />
-
-		<table>
+		<table class="table table-striped">
 			<thead>
 				<tr>
 					<td><B>Titre</B></td>
+					<td><B>Texte</B></td>
+					<td><B>Actions</B></td>
 				</tr>
 
 			</thead>
 			<c:forEach items="${articles}" var="item">
 				<tr>
 					<td><c:out value="${item.titre}" /></td>
+					<td><c:out value="${item.shortText}" /></td>
+					<td>&nbsp;&nbsp;<a class="btn btn-danger"
+						href="/Wiki/deleteArticle?article=${item.id}">Supprimer</a></td>
 				</tr>
 			</c:forEach>
 		</table>
 
-		<form action="creerUtilisateur" method="get">
-			<input type="submit" value="Creer utilisateur" class="button" />
-		</form>
 	</div>
 </body>
 </html>

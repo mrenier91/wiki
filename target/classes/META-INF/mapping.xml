@@ -22,6 +22,10 @@
 	</named-query>
 
 	<!--Article -->
+	<named-query name="Role.getArticles">
+		<query>select a from Article a</query>
+	</named-query>
+	
 	<named-query name="Role.getArticlesFromUtilisateurs">
 		<query>select a from Article a where a.utilisateur.id= :idUser</query>
 	</named-query>

@@ -9,6 +9,39 @@
 	<welcome-file-list>
 		<welcome-file>auth.do</welcome-file>
 	</welcome-file-list>
+	<servlet>
+		<description>
+		</description>
+		<display-name>DeleteUser</display-name>
+		<servlet-name>DeleteUser</servlet-name>
+		<servlet-class>Controller.DeleteUser</servlet-class>
+	</servlet>
+	<servlet>
+		<description>
+		</description>
+		<display-name>ArticlesServlet</display-name>
+		<servlet-name>ArticlesServlet</servlet-name>
+		<servlet-class>Controller.ArticlesServlet</servlet-class>
+	</servlet>
+	<servlet>
+		<description>
+		</description>
+		<display-name>DeleteArticle</display-name>
+		<servlet-name>DeleteArticle</servlet-name>
+		<servlet-class>Controller.DeleteArticle</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>DeleteUser</servlet-name>
+		<url-pattern>/DeleteUser</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>ArticlesServlet</servlet-name>
+		<url-pattern>/ArticlesServlet</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>DeleteArticle</servlet-name>
+		<url-pattern>/DeleteArticle</url-pattern>
+	</servlet-mapping>
 	<session-config>
 		<session-timeout>1</session-timeout>
 	</session-config>

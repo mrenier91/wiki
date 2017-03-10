@@ -1,29 +1,25 @@
 package Controller;
 
 import java.io.IOException;
-import java.util.StringTokenizer;
-
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import DAO.UtilisateurDAO;
-import Entities.Utilisateur;
-
+import DAO.ArticleDAO;
 
 /**
- * Servlet implementation class CreerUtilisateur
+ * Servlet implementation class ArticlesServlet
  */
-@WebServlet("/creerUtilisateur")
-public class CreerUtilisateur extends HttpServlet {
+@WebServlet(urlPatterns = "/articles")
+public class ArticlesServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public CreerUtilisateur() {
+    public ArticlesServlet() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -32,24 +28,16 @@ public class CreerUtilisateur extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		request.getRequestDispatcher("/WEB-INF/vues/creerUser.jsp").forward(request, response);
+		request.setAttribute("articles", ArticleDAO.getArticles());
+		request.getRequestDispatcher("/WEB-INF/vues/articles.jsp").forward(request, response);
 	}
 
 	/**
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		String nom = request.getParameter("name");
-		String prnom = request.getParameter("firstname");
-		String login = request.getParameter("login");
-		String mdp = request.getParameter("mdp");
-		
-		
-		Utilisateur usr = new Utilisateur(login, mdp, nom, prnom);
-
-		UtilisateurDAO.createUtilisateur(usr);
-		
-		request.getRequestDispatcher("/WEB-INF/vues/accueil.jsp").forward(request, response);
+		// TODO Auto-generated method stub
+		doGet(request, response);
 	}
 
 }
